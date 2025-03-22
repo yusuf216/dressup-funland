@@ -12,6 +12,7 @@ const CategorySelector = ({ activeCategory, setActiveCategory }: CategorySelecto
     { id: 'shirt', icon: <Shirt size={18} />, label: 'Shirts' },
     { id: 'bottom', icon: <ShoppingBag size={18} />, label: 'Bottoms' },
     { id: 'hat', icon: <Crown size={18} />, label: 'Hats' },
+    { id: 'background', icon: <Image size={18} />, label: 'Background' }
   ];
   
   return (

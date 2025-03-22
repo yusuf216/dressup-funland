@@ -14,40 +14,40 @@ export type ItemOption = {
 };
 
 const DressUpApp = () => {
-  // Define the clothing options
+  // Define the clothing options with external URLs
   const shirtOptions: ItemOption[] = [
-    { id: "shirt-1", src: "/assets/dress-up-elements/blue-shirt.png", alt: "Blue Shirt" },
-    { id: "shirt-2", src: "/assets/dress-up-elements/red-shirt.png", alt: "Red Shirt" },
-    { id: "shirt-3", src: "/assets/dress-up-elements/sailor-shirt.png", alt: "Sailor Shirt" }
+    { id: "shirt-1", src: "https://dressup.nashawanich.com/assets/dress-up-elements/blue-shirt.png", alt: "Blue Shirt" },
+    { id: "shirt-2", src: "https://dressup.nashawanich.com/assets/dress-up-elements/red-shirt.png", alt: "Red Shirt" },
+    { id: "shirt-3", src: "https://dressup.nashawanich.com/assets/dress-up-elements/sailor-shirt.png", alt: "Sailor Shirt" }
   ];
 
   const bottomOptions: ItemOption[] = [
-    { id: "bottom-1", src: "/assets/dress-up-elements/skirt.png", alt: "Skirt" },
-    { id: "bottom-2", src: "/assets/dress-up-elements/yellow-pants.png", alt: "Yellow Pants" },
-    { id: "bottom-3", src: "/assets/dress-up-elements/blue-pants.png", alt: "Blue Pants" }
+    { id: "bottom-1", src: "https://dressup.nashawanich.com/assets/dress-up-elements/skirt.png", alt: "Skirt" },
+    { id: "bottom-2", src: "https://dressup.nashawanich.com/assets/dress-up-elements/yellow-pants.png", alt: "Yellow Pants" },
+    { id: "bottom-3", src: "https://dressup.nashawanich.com/assets/dress-up-elements/blue-pants.png", alt: "Blue Pants" }
   ];
 
   const hatOptions: ItemOption[] = [
-    { id: "hat-1", src: "/assets/dress-up-elements/straw-hat.png", alt: "Straw Hat" },
-    { id: "hat-2", src: "/assets/dress-up-elements/frog-hat.png", alt: "Frog Hat" },
-    { id: "hat-3", src: "/assets/dress-up-elements/bow.png", alt: "Bow" }
+    { id: "hat-1", src: "https://dressup.nashawanich.com/assets/dress-up-elements/straw-hat.png", alt: "Straw Hat" },
+    { id: "hat-2", src: "https://dressup.nashawanich.com/assets/dress-up-elements/frog-hat.png", alt: "Frog Hat" },
+    { id: "hat-3", src: "https://dressup.nashawanich.com/assets/dress-up-elements/bow.png", alt: "Bow" }
   ];
 
   const backgroundOptions: ItemOption[] = [
-    { id: "bg-1", src: "/assets/background/background-yellow.png", alt: "Yellow Background" },
-    { id: "bg-2", src: "/assets/background/blue-background.png", alt: "Blue Background" },
-    { id: "bg-3", src: "/assets/background/purple-background.png", alt: "Purple Background" }
+    { id: "bg-1", src: "https://dressup.nashawanich.com/assets/background/background-yellow.png", alt: "Yellow Background" },
+    { id: "bg-2", src: "https://dressup.nashawanich.com/assets/background/blue-background.png", alt: "Blue Background" },
+    { id: "bg-3", src: "https://dressup.nashawanich.com/assets/background/purple-background.png", alt: "Purple Background" }
   ];
 
-  // Character base
-  const characterBase = "/assets/character-base.png";
+  // Character base - updated to use the external URL
+  const characterBase = "https://dressup.nashawanich.com//Dress Up Game_files/head.png";
 
   // State
   const [activeCategory, setActiveCategory] = useState<Category>('shirt');
-  const [selectedShirt, setSelectedShirt] = useState<ItemOption | null>(null);
-  const [selectedBottom, setSelectedBottom] = useState<ItemOption | null>(null);
-  const [selectedHat, setSelectedHat] = useState<ItemOption | null>(null);
-  const [selectedBackground, setSelectedBackground] = useState<ItemOption | null>(null);
+  const [selectedShirt, setSelectedShirt] = useState<ItemOption | null>(shirtOptions[0]);
+  const [selectedBottom, setSelectedBottom] = useState<ItemOption | null>(bottomOptions[0]);
+  const [selectedHat, setSelectedHat] = useState<ItemOption | null>(hatOptions[0]);
+  const [selectedBackground, setSelectedBackground] = useState<ItemOption | null>(backgroundOptions[0]);
   const [outfitComplete, setOutfitComplete] = useState(false);
 
   // Helper to get options for current category
@@ -109,8 +109,7 @@ const DressUpApp = () => {
   useEffect(() => {
     toast("Welcome to Dress Up Funland! Select items to dress your character.");
     
-    // Default selections
-    setSelectedBackground(backgroundOptions[0]);
+    // Default selections have been set in state initialization
   }, []);
 
   // Complete outfit
