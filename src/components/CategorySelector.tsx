@@ -1,5 +1,5 @@
 
-import { Shirt, ShoppingBag, Hat, Image } from 'lucide-react';
+import { Shirt, ShoppingBag, Crown, Image } from 'lucide-react';
 import type { Category } from './DressUpApp';
 
 interface CategorySelectorProps {
@@ -11,7 +11,7 @@ const CategorySelector = ({ activeCategory, setActiveCategory }: CategorySelecto
   const categories: {id: Category, icon: React.ReactNode, label: string}[] = [
     { id: 'shirt', icon: <Shirt size={18} />, label: 'Shirts' },
     { id: 'bottom', icon: <ShoppingBag size={18} />, label: 'Bottoms' },
-    { id: 'hat', icon: <Hat size={18} />, label: 'Hats' },
+    { id: 'hat', icon: <Crown size={18} />, label: 'Hats' },
   ];
   
   return (
