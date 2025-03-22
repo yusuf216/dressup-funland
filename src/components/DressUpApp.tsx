@@ -39,8 +39,8 @@ const DressUpApp = () => {
     { id: "bg-3", src: "https://dressup.nashawanich.com/assets/background/purple-background.png", alt: "Purple Background" }
   ];
 
-  // Character base - updated to use the external URL
-  const characterBase = "https://dressup.nashawanich.com//Dress Up Game_files/head.png";
+  // Character base - fixed URL by removing the double slash
+  const characterBase = "https://dressup.nashawanich.com/Dress%20Up%20Game_files/head.png";
 
   // State
   const [activeCategory, setActiveCategory] = useState<Category>('shirt');
