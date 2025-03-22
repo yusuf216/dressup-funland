@@ -1,10 +1,14 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
 @layer base {
   :root {
-    --background: 0 0% 100%;
+    --background: 60 100% 98%;
     --foreground: 222.2 84% 4.9%;
 
     --card: 0 0% 100%;
@@ -13,11 +17,11 @@
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 160 46% 74%;
+    --primary-foreground: 155 47% 20%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 60 100% 91%;
+    --secondary-foreground: 40 30% 40%;
 
     --muted: 210 40% 96.1%;
     --muted-foreground: 215.4 16.3% 46.9%;
@@ -28,26 +32,19 @@
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 214.3 31.8% 91.4%;
+    --border: 160 46% 85%;
     --input: 214.3 31.8% 91.4%;
     --ring: 222.2 84% 4.9%;
 
-    --radius: 0.5rem;
+    --radius: 1rem;
 
     --sidebar-background: 0 0% 98%;
-
     --sidebar-foreground: 240 5.3% 26.1%;
-
     --sidebar-primary: 240 5.9% 10%;
-
     --sidebar-primary-foreground: 0 0% 98%;
-
     --sidebar-accent: 240 4.8% 95.9%;
-
     --sidebar-accent-foreground: 240 5.9% 10%;
-
     --sidebar-border: 220 13% 91%;
-
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
@@ -96,6 +93,72 @@
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-['Pixelify_Sans',_sans-serif];
+    overflow-x: hidden;
+  }
+
+  .pixel-title {
+    font-family: 'VT323', monospace;
+    letter-spacing: 0.5px;
+  }
+
+  .dress-up-frame {
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .dress-up-frame:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+  }
+
+  .item-option {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .item-option:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+  }
+
+  .category-button {
+    transition: transform 0.2s ease, background-color 0.2s ease;
+  }
+
+  .category-button:hover {
+    transform: translateY(-2px);
+  }
+
+  /* For smooth item transitions */
+  .item-transition-enter {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+
+  .item-transition-enter-active {
+    opacity: 1;
+    transform: scale(1);
+    transition: opacity 300ms, transform 300ms;
+  }
+
+  .item-transition-exit {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  .item-transition-exit-active {
+    opacity: 0;
+    transform: scale(0.9);
+    transition: opacity 300ms, transform 300ms;
+  }
+
+  /* For loading images with blur effect */
+  .image-blur-loading {
+    filter: blur(10px);
+    transition: filter 0.3s ease-out;
+  }
+
+  .image-blur-loaded {
+    filter: blur(0);
   }
 }
